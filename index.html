@@ -755,9 +755,6 @@
         0 16px 38px rgba(39, 61, 51, 0.07);
     }
 
-
-    /* FEATURED PROJECT */
-
     .featured-project {
 
       display: grid;
@@ -894,9 +891,6 @@
       color: var(--teal-dark);
     }
 
-
-    /* LARGE UX CARDS */
-
     .project-grid {
 
       display: grid;
@@ -1001,7 +995,7 @@
 
 
     /* =====================================================
-       SMALL GAMES / EXPERIMENTS
+       GAMES
     ====================================================== */
 
     .games-block {
@@ -1047,22 +1041,18 @@
       display: grid;
 
       grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(3, minmax(0, 1fr));
 
       gap: 20px;
     }
 
     .game-card {
 
-      display: grid;
+      display: flex;
 
-      grid-template-columns: 150px 1fr;
+      flex-direction: column;
 
-      gap: 18px;
-
-      align-items: center;
-
-      padding: 14px;
+      overflow: hidden;
 
       border-radius: 17px;
 
@@ -1078,7 +1068,7 @@
 
     .game-card:hover {
 
-      transform: translateY(-3px);
+      transform: translateY(-4px);
 
       background: white;
 
@@ -1088,13 +1078,13 @@
 
     .game-image {
 
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
       overflow: hidden;
 
-      border-radius: 12px;
-
       background: white;
-
-      aspect-ratio: 1 / 1;
     }
 
     .game-image img {
@@ -1110,6 +1100,11 @@
 
     .game-card:hover .game-image img {
       transform: scale(1.04);
+    }
+
+    .game-copy {
+
+      padding: 16px;
     }
 
     .game-copy h4 {
@@ -1410,7 +1405,8 @@
       }
 
       .research-grid,
-      .project-grid {
+      .project-grid,
+      .games-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1418,10 +1414,6 @@
       .creative-cv-grid,
       .about-grid,
       .thesis-card {
-        grid-template-columns: 1fr;
-      }
-
-      .games-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1441,8 +1433,6 @@
         padding: 14px 18px;
       }
 
-      /* Mobile nav:
-         keep Research and CV visible */
       .nav a {
         display: none;
       }
@@ -1470,8 +1460,6 @@
         padding: 24px;
       }
 
-      /* IMPORTANT:
-         show complete project images on mobile */
       .project-image {
         aspect-ratio: auto;
         min-height: 0;
@@ -1511,6 +1499,19 @@
         padding: 15px;
       }
 
+      .game-image {
+        aspect-ratio: auto;
+      }
+
+      .game-image img {
+
+        width: 100%;
+
+        height: auto;
+
+        object-fit: contain;
+      }
+
       .games-heading {
         display: block;
       }
@@ -1518,14 +1519,6 @@
       .games-heading span {
         display: block;
         margin-top: 4px;
-      }
-
-      .game-card {
-        grid-template-columns: 105px 1fr;
-      }
-
-      .game-image {
-        aspect-ratio: 1 / 1;
       }
     }
 
@@ -1585,9 +1578,7 @@
 <main class="shell">
 
 
-<!-- =====================================================
-     HERO
-====================================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -1611,25 +1602,11 @@
 
     <div class="hero-pills">
 
-      <span class="pill">
-        Human–AI Interaction
-      </span>
-
-      <span class="pill">
-        UI/UX Research & Design
-      </span>
-
-      <span class="pill">
-        Mixed Reality
-      </span>
-
-      <span class="pill">
-        Interactive Systems
-      </span>
-
-      <span class="pill">
-        Prototyping
-      </span>
+      <span class="pill">Human–AI Interaction</span>
+      <span class="pill">UI/UX Research & Design</span>
+      <span class="pill">Mixed Reality</span>
+      <span class="pill">Interactive Systems</span>
+      <span class="pill">Prototyping</span>
 
     </div>
 
@@ -1675,9 +1652,7 @@
 
 
 
-<!-- =====================================================
-     RESEARCH
-====================================================== -->
+<!-- RESEARCH -->
 
 <section
   id="research"
@@ -1740,21 +1715,10 @@
 
       <div class="research-tags">
 
-        <span class="research-tag">
-          Mixed Reality
-        </span>
-
-        <span class="research-tag">
-          Generative AI
-        </span>
-
-        <span class="research-tag">
-          Human–AI Interaction
-        </span>
-
-        <span class="research-tag">
-          User Study
-        </span>
+        <span class="research-tag">Mixed Reality</span>
+        <span class="research-tag">Generative AI</span>
+        <span class="research-tag">Human–AI Interaction</span>
+        <span class="research-tag">User Study</span>
 
       </div>
 
@@ -1795,21 +1759,10 @@
 
       <div class="research-tags">
 
-        <span class="research-tag">
-          Human–AI Collaboration
-        </span>
-
-        <span class="research-tag">
-          Mixed Reality
-        </span>
-
-        <span class="research-tag">
-          IoT
-        </span>
-
-        <span class="research-tag">
-          Research through Design
-        </span>
+        <span class="research-tag">Human–AI Collaboration</span>
+        <span class="research-tag">Mixed Reality</span>
+        <span class="research-tag">IoT</span>
+        <span class="research-tag">Research through Design</span>
 
       </div>
 
@@ -1857,9 +1810,7 @@
 
 
 
-<!-- =====================================================
-     UI UX
-====================================================== -->
+<!-- UI UX -->
 
 <section
   id="work"
@@ -1909,10 +1860,8 @@
       </h3>
 
       <p>
-
         A portable UV-protective parasol with
         integrated solar charging and interactive controls.
-
       </p>
 
       <a
@@ -2132,9 +2081,7 @@
   </div>
 
 
-  <!-- =====================================================
-       SMALL GAMES
-  ====================================================== -->
+  <!-- GAMES -->
 
   <div class="games-block">
 
@@ -2231,6 +2178,45 @@
       </a>
 
 
+
+      <a
+        href="https://saharnaz.itch.io/escape-from-the-zoo"
+        target="_blank"
+        class="game-card"
+      >
+
+        <div class="game-image">
+
+          <img
+            src="zoo.png"
+            alt="Escape from the Zoo game"
+          >
+
+        </div>
+
+        <div class="game-copy">
+
+          <div class="project-type">
+            Game · Interactive Experiment
+          </div>
+
+          <h4>
+            Escape from the Zoo
+          </h4>
+
+          <p>
+            Small interactive game project.
+          </p>
+
+          <div class="game-link">
+            Play on itch.io →
+          </div>
+
+        </div>
+
+      </a>
+
+
     </div>
 
   </div>
@@ -2239,9 +2225,7 @@
 
 
 
-<!-- =====================================================
-     CREATIVE PRACTICE + CV
-====================================================== -->
+<!-- CREATIVE PRACTICE + CV -->
 
 <section
   id="creative"
@@ -2319,9 +2303,7 @@
 
 
 
-<!-- =====================================================
-     ABOUT
-====================================================== -->
+<!-- ABOUT -->
 
 <section
   id="about"
